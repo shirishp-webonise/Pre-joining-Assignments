@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Answer 1</title>
+        <style>
+            #story-container{
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: justify
+            }
+            h2{
+                text-align: center;
+                margin-top: 50px;
+            }
+        </style>
+        <script>
+                let name  = prompt("Please enter your name", "Nishant");
+                let vegetable1 = prompt("A vegetable", "Cabbage");
+                let teacher = prompt("teacher's name", "Lorean");
+                let vegetable2 = prompt("another vegetable", "Cauliflower");
+                let girl = prompt("A girl's name", "Simran");
+                let boy = prompt("A boys's name", "Rahul");
+                
+                let color = ""
+                let nameField = "<span class='userWord' style=background-color:"+color+">"+name+"</span>"
+                let vegetable1Field = "<span class='userWord' style=background-color:"+color+">"+vegetable1+"</span>"
+                let teacherField = "<span class='userWord' style=background-color:"+color+">"+teacher+"</span>"
+                let vegetable2Field = "<span class='userWord' style=background-color:"+color+">"+vegetable2+"</span>"
+                let girlField = "<span class='userWord' style=background-color:"+color+">"+girl+"</span>"
+                let boyField = "<span class='userWord' style=background-color:"+color+">"+boy+"</span>"
+                
+                let story = "<div id='story-container'><p>Once upon a time there was a little boy named "+nameField+". He was not like all the other children, because he had a very big secret. Everyday he went to school hoping no one had discovered the truth. You see "+nameField+"'s parents were really "+vegetable1Field+"s. How he turned out to be a normal boy, he didn't know.</p>"+
+                "<p>It was report card time, the trickiest time of the year, because that was when the teachers usually wanted to meet all of the students' parents. "+nameField+" always did his best in school so that his parents wouldn't have to meet his teacher.</p>"+
+
+                "<p>This year was no exception, except that "+teacherField+" always wanted to meet everyone's parents. Sure enough, at the bottom of his report card, an interview time had been scheduled. "+nameField+" was devastated! How would he explain?</p>"+
+
+                "<p>When he brought his report card home, his parents were excited. Finally they would get to meet one of "+nameField+"'s teachers.</p>"+
+
+                "<p>That evening "+nameField+" and his parents walked to the school. All the while "+nameField+" was dying inside. How, oh how, would he explain!? Hey, wait a minute! When he looked around he saw "+girlField+", the most popular girl in class and her parents were "+vegetable2Field+"s and walking towards the gym was "+boyField+" and his parents were mushrooms.</p>"+
+
+                "<p>Wow, what a relief, "+nameField+" wasn't so different after all!</p><div>";
+                
+                document.write("<h2>Story: Parents</h2>");
+                document.write(story);
+                
+                
+                color = prompt("tell me a color(Aqua, Black, Blue, Fuchsia, Gray, Green, Lime, Maroon, Navy, Olive, Purple, Red, Silver, Teal, White, Yellow)", "yellow");
+                
+                let userFields = document.getElementsByClassName("userWord");
+                for(let i=0; i<userFields.length; i++){
+                    userFields[i].style.backgroundColor = color;
+                } 
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

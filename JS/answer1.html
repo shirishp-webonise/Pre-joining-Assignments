@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Answer 1</title>
+        <script>
+            function init(){
+                document.write("<hr/>");
+                document.write("<h3>Browser Info</h3>");
+                document.write("<p>Browser Name: <strong>", navigator.appName,"</strong></p>");
+                document.write("<p>Version: <strong>", navigator.appVersion,"</strong><p>");
+                document.write("<p>Language: <strong>", navigator.language,"</strong><p>");
+                document.write("<p>Platform: <strong>", navigator.platform,"</strong><p>");
+                document.write("<hr/>");
+                document.write("<h3>Available Resolution</h3>");
+                document.write("<p>Height: <strong>", window.screen.availHeight,"px</strong><p>");
+                document.write("<p>Width: <strong>", window.screen.availWidth,"px</strong><p>");
+                document.write("<hr/>");
+                document.write("<h3>Page Date</h3>");
+                document.write("<p>last modified: <strong>", (new Date(document.lastModified)).toDateString(),"</strong><p>");
+                document.write("<hr/>");
+            }
+        </script>
+    </head>
+    <body onload="init()">
+    </body>
+</html>
