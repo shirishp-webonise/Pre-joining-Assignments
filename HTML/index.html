@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                font-family: Verdana;
+                
+            }
+            .main-navigation-container{
+                padding: 23px 100px;
+            }
+            .main-navigation{
+                float: right;
+                margin-top: 28px;
+            }
+            .main-navigation span{
+                right: 0;
+                font-size: 18px;
+                color: #1C3A50;
+                padding-right: 14px;
+                padding-left: 14px;
+            }
+            .main-navigation span:hover{
+                color: #02B8DC;
+                cursor: pointer;
+            }
+            .search-container{
+                background-image: url("bannerBg.png");
+                height: 500px;
+                padding-right: 100px;
+                padding-left: 100px;
+            }
+            .footer-container{
+                padding-left: 100px;
+                padding-right: 100px;
+                background-color: #1C3A50;
+                padding-top: 50px;
+            }
+            .copyright-msg-text{
+                font-size: 12px;
+                color: #8E9DA8;
+                line-height: 30px;
+            }
+            .footer-nav-container{
+                font-size: 16px;
+                color: #fff;
+            }
+            .footer-nav-block{
+                float: left;
+                padding-right: 100px;
+            }
+            .copyright-msg-container{
+                clear: both;
+                padding-top: 25px;
+            }
+            .search-filter-box{
+                margin-top: 97px;
+                /* border: 1px solid black; */
+                background-color: white;
+                width: 480px;
+                float: left;
+                padding-left: 80px;
+                padding-right: 80px;
+                padding-top: 40px;
+                padding-bottom: 20px;
+            }
+            .search-reason-text{
+                font-size: 32px;
+                color: #1f435E;
+                padding-top: 160px;
+                padding-left: 680px;
+            }
+            .input-label{
+                width: 100%;
+                font-size: 14px;
+                color: #6D6E71;
+            }
+            .filter-input-col{
+                width: 150px;
+                float: left;
+            }
+            .filter-location-container{ width: 480px; }
+            .filter-location-container input{ width: 100%; }
+            .filter-input{
+                border: #d0d0d0 solid 1px;
+                border-radius: 5px;
+                padding: 12px 8px;
+                width: 134px;
+            }
+            .other-filters-container{ margin-top: 15px; }
+            #find-button{
+                background-color: tomato;
+                width: 140px;
+                height: 47px;
+                border: none;
+                color: white;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+            }
+            .reason-container{
+                padding-right: 75px;
+                padding-left: 75px;
+                font-size: 18px;
+                color: #1C3A50;
+                background-color: rgb(172, 224, 224);
+                padding-bottom: 30px;
+            }
+            .reason-title{
+                font-size: 36px;
+                text-align: center;
+            }
+            .flex-container{ display: flex; }
+            .flex-element{ flex: 1; }
+            .reason-element{
+                text-align: center;
+                width: 294px;
+                margin-right: 75px;
+                margin-left: 75px;
+            }
+            .reason-elements-container{ margin-top: 30px; }
+            .reason-link{
+                font-size: 14px;
+                margin-top: 15px;
+            }
+            .search-desc-text{
+                font-size: 32px;
+                color: #1F435E;
+                padding-top: 160px;
+                padding-left: 680px;
+            }
+            .showcase-container{
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: rgba(247, 247, 247, 0.86);
+            }
+            .showcase-title{
+                font-size: 36px;
+                text-align: center;
+            }
+            .deal-offer-container{
+                background-color: #02b8DC;
+                padding-top: 22px;
+                text-align: center;
+                font-size: 24px;
+                color: white;
+            }
+            #button-join-now{
+                width: 160px;
+                height: 42px;
+                border: 1px solid white;
+                font-size: 18px;
+                background-color: transparent;
+                margin-left: 22px;
+                color: white;
+                margin-bottom: 25px;
+            }
+            .showcase-gallery{
+                margin: 20px 85px;
+                color: #1C3A50;
+            }
+            .gallery-item{
+                margin: 15px;
+                height: 260px;
+                background-color: darkgrey;
+                flex: 1;
+                -ms-flex: 1;
+                -webkit-flex: 1;
+            }
+            .gallery-row-1,.gallery-row-2{
+                display: flex;
+                width: 100%;
+            }
+            .gallery-item-chart{
+                padding: 13px 20px;
+                padding-bottom: 0;
+                height: unset;
+            }
+            .chart-row{
+                /*padding: 25px 0;*/
+                display: flex;
+            }
+            .gallery-chart-season-rate{
+                color: #EF5A29;
+                margin-top: 13px;
+            }
+            .value-currency{
+                font-size: 22px;
+                vertical-align: text-bottom;
+            }
+            .value-number{
+                font-size: 30px;
+            }
+            .chart-spot-name{
+                margin: 25px 0;
+                flex:1;
+            }
+            .chart-spot-name span{ 
+                vertical-align: -webkit-baseline-middle
+            }
+            .bahamas-box{
+                margin: 20px;
+                width: 250px;
+                height: 220px;
+                font-size: 22px;
+                background-color: white;
+                opacity: 0.75;
+                text-align: center
+            }
+            .gallery-row-2 .gallery-item{
+                text-align: center;
+                font-size: 22px;
+            }
+            .row2-item-txt-container{
+                padding: 10px 30px;
+                opacity: 0.75;
+                background-color: white;
+                position: relative;
+                top: 120px;
+            }
+        </style>
+    </head>
+<body>
+    <div class="main-navigation-container">
+
+        <img src="logo.png" alt="logo" />
+        <div class="main-navigation">
+            <span>Flights</span>
+            <span>Hotels</span>
+            <span>Vacations</span>
+            <span>Deals</span>
+            <span>Groups</span>
+            <span>Destinations</span>
+            <span>More</span>
+        </div>
+    </div>
+    <div class="search-container">
+        <div class="search-filter-box">
+            <div class="filter-location-container">
+                <div class="input-label">Location</div>
+                <input class="filter-input" type="text" value="" placeholder="Enter destination" />
+            </div>
+            <div class="other-filters-container">
+                <div class="filter-input-col">
+                    <div class="input-label">Check In</div>
+                    <input class="filter-input" type="text" value="" placeholder="05/07/2015" />
+                </div>
+                <div class="filter-input-col" style="margin-left:15px">
+                    <div class="input-label">Check Out</div>
+                    <input class="filter-input" type="text" value="" placeholder="05/07/2015" />
+                </div>
+                <div class="filter-input-col" style="margin-left:15px">
+                    <div class="input-label">Accomodation</div>
+                    <input class="filter-input" type="text" value="" placeholder="1 Room, 2 Guests" style="width: 100%;" />
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px">
+                <input id="find-button" type="button" value="FIND" name="" />
+            </div>
+
+        </div>
+        <div class="search-desc-text">
+            Aenean accumsan augue gravida accumsan tempus.
+        </div>
+    </div>
+    <div class="reason-container">
+        <div class="reason-title">Reasons to book with us</div>
+        <div class="flex-container reason-elements-container">
+            <div class="reason-element">
+                <img src="reason1.png" alt="" />
+                <div class="reason-name" style="margin-top: 15px">
+                    Suspendisse sit amet nunc a leo
+                </div>
+                <div class="reason-link">
+                    Lipsum Lorem >
+                </div>
+            </div>
+            <div class="reason-element">
+                <img src="reason2.png" alt="" />
+                <div class="reason-name">
+                    Proin sollicitudin nisl tortor, quis venenatis arcu
+                </div>
+                <div class="reason-link">
+                    Lipsum Lorem >
+                </div>
+            </div>
+            <div class="reason-element">
+                <img src="reason3.png" alt="" />
+                <div class="reason-name">
+                    Suspendisse sit amet nunc a leo
+                </div>
+                <div class="reason-link">
+                    Lipsum Lorem >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="showcase-container">
+        <div class="showcase-title">Deals</div>
+        <div class="showcase-gallery">
+            <div class="gallery-row-1">
+                <div class="gallery-item" style="flex:2.35;background-image: url('dummy.jpg');">
+                    <div class="bahamas-box">
+                        <div style="margin-bottom: 40px;position: relative; top: 20px;">Last Minute Deals</div>
+                        <div style="margin-bottom: 15px;">Bahamas</div>
+                        <div style="font-size: 16px;">Vacations from</div>
+                        <div>
+                            <span style="font-size:22px">C$</span><span style="font-size: 30px">198</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-chart" style="background-color: white">
+                    <div style="font-size: 22px;text-align: center">Chart</div>
+                    <div style="font-size: 18px;">
+                        <div style="border-bottom: 1px #D0DCE5 solid;" class="chart-row">
+                            <div class="chart-spot-name">Nassau Four Seasons</div>
+                            <div class="gallery-chart-season-rate">
+                                <span>
+                                    <span class="value-currency">C$</span>
+                                    <span class="value-number">480</span>
+                                </span>
+
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px #D0DCE5 solid;" class="chart-row">
+                            <div class="chart-spot-name">Jamaica Beach Club</div>
+                            <div class="gallery-chart-season-rate">
+                                <span class="value-currency">C$</span>
+                                <span class="value-number">350</span>
+                            </div>
+                        </div>
+                        <div class="chart-row">
+                            <div class="chart-spot-name">Jamaica Beach Club</div>
+                            <div class="gallery-chart-season-rate">
+                                <span class="value-currency">C$</span>
+                                <span class="value-number">350</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-row-2">
+                <div class="gallery-item" style="background-image: url('dummy2.jpg')">
+                    <span class="row2-item-txt-container">Vacations</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('dummy2.jpg')">
+                    <span class="row2-item-txt-container">Flights</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('dummy2.jpg')">
+                    <span class="row2-item-txt-container">Flights</span>
+                </div>
+            </div>
+        </div>
+        <div class="deal-offer-container">
+            Join today and get <span style="font-size:30px">$25</span> off your first purchase
+            <input id="button-join-now" type="button" value="Join Now" />
+        </div>
+    </div>
+    <div class="footer-container">
+        <div class="footer-nav-container">
+            <div class="footer-nav-block">
+                <p>Destinations</p>
+                <p>Groups</p>
+                <p>Deals</p>
+                <p>Vacations</p>
+                <p>Hotels</p>
+                <p>Flights</p>
+            </div>
+            <div class="footer-nav-block">
+                <p>Contact us</p>
+                <p>FAQs</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+                <p>Abous us</p>
+            </div>
+        </div>
+        <div class="copyright-msg-container">
+            <span class="copyright-msg-text">Copyright © 2004 - 2015 lastminuteclub.com. All rights reserved</span>
+        </div>
+    </div>
+</body>
+</html>
