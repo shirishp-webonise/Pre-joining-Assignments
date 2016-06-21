@@ -1,0 +1,64 @@
+a) Factory Pattern
+	We would have a PcFactory that contains a factory function designated
+	to create objects of different types of PCs. Hence we can simply ask
+	for a Tower PC and the factory will give us one without bothering us
+	about how it is creating it.
+	
+	We can have inheritance patterns for different types of Chassis and Cabinet as shown in the question,
+	and keep objects of specific types of same in each type of PCs.
+	
+	
+	Abstract Class Chassis{ ... }
+	Abstract Class Cabinet{ ... }
+	
+	Abstract Class Pc{ 
+		private Chassis chassis;
+		private Cabinet cabinet;
+		
+		Pc(Chassis ch, Cabinet cb){
+			this.chassis = ch;
+			this.cabinet = cb;
+		}
+	}
+	Class TowerPc extends Pc{ 
+		TowerPc(Chassis ch, Cabinet cb){
+			super(ch, cb);
+		}
+	}
+	Class CabinetPc extends Pc{ 
+		CabinetPc(Chassis ch, Cabinet cb){
+			super(ch, cb);
+		}
+	}
+	
+	Class TowerChassis extends Chassis{ ... }
+	Class DesktopChassis extends Chassis{ ... }
+	Class TowerCabinet extends Cabinet{ ... }
+	Class DesktopCabinet extends Cabinet{ ... }
+	
+	----> Pseudo-code for Factory Class
+	
+	CLASS PcFactory
+	DEFINITION
+		PUBLIC METHOD getPc(TypeOfPC type) RETURNS Pc 	//factory method dedicated for creating objects
+		DEFINITION
+			DECLARE Chassis newChassis
+			DECLARE Cabinet newCabinet
+			DECLARE Pc newPc
+			
+			IF type EQUALS 'tower'
+			THEN
+				SET newChassis <- NEW TowerChassis
+				SET newCabinet <- NEW TowerCabinet
+				
+				SET newPc <- NEW TowerPc(newChassis, newCabinet)
+			ELSE IF type EQUALS 'desktop' 
+				SET newChassis <- NEW DesktopChassis
+				SET newCabinet <- NEW DesktopCabinet
+				
+				SET newPc <- NEW DesktopPc(newChassis, newCabinet)
+			END IF
+
+			RETURN newPc
+		CLOSE DEFINITION
+	CLOSE DEFINITION

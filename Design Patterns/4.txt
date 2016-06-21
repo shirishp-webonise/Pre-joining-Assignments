@@ -1,0 +1,47 @@
+a) Strategy Design Pattern with Factory design pattern
+	Since the problem is about switching between algorithms(strategies) on the run,
+	I would prefer strategy design pattern here.
+	
+b) 
+	Encapsulate each sorting algorithm into separate classes which implement a common interface SortStrategy.
+	Hence we can create a variable of type SortStrategy which can switch between the instances of various strategies,
+	eg. BubbleSort, InsertionSort, QuickSort, HeapSort, etc.
+	
+	Interface SortStrategy{
+		public void sort(List arr);
+	}
+	
+	Class BubbleSort implements SortStrategy{
+		public void sort(List arr){ ... }
+	}
+	Class InsertionSort implements SortStrategy{
+		public void sort(List arr){ ... }
+	}
+	Class QuickSort implements SortStrategy{
+		public void sort(List arr){ ... }
+	}
+	Class HeapSort implements SortStrategy{
+		public void sort(List arr){ ... }
+	}
+	
+	-> switching between algorithms
+	SortStrategy strategy = new BubbleSort();
+	strategy = new InsertionSort();
+	strategy = new QuickSort();
+	strategy = new HeapSort();
+	
+	A strategy factory can be employed to select a SortStrategy depending upon sort criteria (price/performance).
+	The factory function will accept the criteria as parameter and depending on some conditions
+	it will select and create an object of SortStrategy
+	
+	Class StrategyFactory{
+		public SortStrategy getStrategy(Criteria c){
+			check c{
+				condition 1: return BubbleSort;
+				condition 2: return HeapSort;
+				.
+				.
+				.
+			}
+		}
+	}

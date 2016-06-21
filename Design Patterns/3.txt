@@ -1,0 +1,7 @@
+a) Decorator Pattern
+	Just as the problem expects, decorator pattern is used to add more features to an existing class,
+	without changing the structure of the existing class. Hence Decorator Design Pattern is the best suited in this case.
+	
+	Using the Decorator Pattern, we will create a wrapper class that holds an object of the ComputerEquipment class,
+	along with the additional operations. Hence we have an enhanced class without tempering with the original class,
+	and without rewriting the original class.

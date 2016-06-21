@@ -1,0 +1,70 @@
+a) Composite Design Pattern
+	Since each component is composed of some sub components,
+	and each of the components/sub-components at each level have to be treated in a uniform way, 
+	Composite Design Pattern is the best suited in this case.
+	
+	I would create an abstract class PcComponent which will have price and power consumption as member variables,
+	and two member methods; netPrice() which adds its price with net price returned by each of its sub components and returns it,
+	and powerCosumption() which adds its power consumption to power consumptions returned by each of its sub components and returns it.
+	
+	Each component/sub component will extend this abstract class PcComponent. 
+	Hence it will have public properties of PcComponent class, along with its specific properties.
+	
+b) 
+	----> pseudo code for Composite Class PcComponent
+	
+	ABSTRACT CLASS PcComponent
+	DEFINITTION
+		PRIVATE CONSTANT MEMBER VARIABLE id
+		PRIVATE CONSTANT MEMBER VARIABLE name
+		PRIVATE MEMBER VARIABLE price
+		PRIVATE MEMBER VARIABLE power
+		PRIVATE MEMBER LIST subComponents
+		
+		PUBLIC MEMBER METHOD netPrice()
+		START DEFINITION
+			LET  netPrice <- this.price
+			IF this.subComponentS IS NOT null
+				FOR EACH subComponent IN this.subComponents
+				DO
+					SET netPrice <- netPrice + subComponent.netPrice()
+				END DO
+			END IF
+			
+			RETURN netPrice
+		CLOSE DEFINITION
+		
+		PUBLIC MEMBER METHOD powerConsumption() 
+		START DEFINITION
+			LET  power <- this.power
+			IF this.subComponentS IS NOT null
+				FOR EACH subComponent IN this.subComponents
+				DO
+					SET power <- power + subComponent.powerConsumption()
+				END DO
+			END IF
+			
+			RETURN power
+		CLOSE DEFINITION
+		
+		PUBLIC MEMBER METHOD addSubcomponent ACCEPT INPUT subcomponent
+		START DEFINITION
+			PUT subcomponent INTO this.subComponents
+		CLOSE DEFINITION
+	CLOSE DEFINITION
+	
+	
+	----> example of a concrete Class that extends Class PcComponent
+	CLASS chassis EXTENDS PcComponent
+	DEFINITION
+		PRIVATE CONSTANT MEMBER VARIABLE power
+		PRIVATE CONSTANT MEMBER VARIABLE type
+		PRIVATE MEMBER VARIABLE state
+		
+		< plus other variables and methods>
+	CLOSE DEFINITION
+	
+
+	
+	
+	
